@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CardPage extends StatelessWidget {
@@ -13,6 +14,7 @@ class CardPage extends StatelessWidget {
           _cardTipo1(),
           SizedBox(height: 30.0,),
           _cardTipo2(),
+          SizedBox(height: 30.0,),
 
         ],
       ),
@@ -21,6 +23,8 @@ class CardPage extends StatelessWidget {
 
   _cardTipo1() {
     return Card(
+      elevation: 3.0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
       child: Column(
         children: <Widget>[
           ListTile(
@@ -39,7 +43,6 @@ class CardPage extends StatelessWidget {
                 child: Text ('Ok'),
                 onPressed: (){},
               ),
-
             ],
           )
         ],
@@ -48,26 +51,45 @@ class CardPage extends StatelessWidget {
   }
 
   Widget _cardTipo2() {
-    return Card(
+    final card = Container(
+      //clipBehavior: Clip.antiAlias,
       child: Column(
         children: <Widget>[
           FadeInImage(
-            image: NetworkImage('https://upload.wikimedia.org/wikipedia/commons/3/35/Neckertal_20150527-6384.jpg'),
+            image: NetworkImage('https://lh3.googleusercontent.com/proxy/mhcF_9tjy-yW5odzaY4af3PVbrAM15HUzVJCgJjipQaJ0Dh1irH5qKQDGxDaMfurT4ul7OpUSzRfMcaeZGLlwaI73rjhpUQSYtC2PIPMFD9521L6u2xIt7OiGtTX6ZM4ZoCGepDbijmN_LjzcPGp'),
             placeholder: AssetImage('assets/jar-loading.gif'),
             fadeInDuration: Duration ( milliseconds: 200),
-            height: 300.0,
+            height: 230.0,
             fit: BoxFit.cover,
           ),
-
-
 /*          Image(
             image: NetworkImage('https://upload.wikimedia.org/wikipedia/commons/3/35/Neckertal_20150527-6384.jpg'),
           ),*/
-          
+
           Container(
-              padding: EdgeInsets.all(10.0),
-              child: Text('No Tengo idea de que poner'))
+              padding: EdgeInsets.all(8.0),
+              child: Text('Deportes',)
+          )
         ],
+      ),
+    );
+
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20.0),
+        boxShadow: <BoxShadow>[
+          BoxShadow(
+            color: Colors.black26,
+            blurRadius: 10.0,
+            spreadRadius: 2.0,
+            offset: Offset(2.0, 10.0)
+          )
+        ]
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(30.0),
+        child: card,
       ),
     );
   }
