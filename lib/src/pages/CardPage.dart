@@ -56,7 +56,7 @@ class CardPage extends StatelessWidget {
       child: Column(
         children: <Widget>[
           FadeInImage(
-            image: NetworkImage('https://lh3.googleusercontent.com/proxy/mhcF_9tjy-yW5odzaY4af3PVbrAM15HUzVJCgJjipQaJ0Dh1irH5qKQDGxDaMfurT4ul7OpUSzRfMcaeZGLlwaI73rjhpUQSYtC2PIPMFD9521L6u2xIt7OiGtTX6ZM4ZoCGepDbijmN_LjzcPGp'),
+            image: NetworkImage('https://lh3.googleusercontent.com/proxy/UO8K81vA1JXbNHqv_mXGVEIpzK9ZIdpsK9b7ZpVvog0PMpUWjPdwQ6F7JgQreLFWEOWI97MRCNnAPUsXZNkWHI2o6bR3amnFjX2WQuPLXHjs'),
             placeholder: AssetImage('assets/jar-loading.gif'),
             fadeInDuration: Duration ( milliseconds: 200),
             height: 230.0,

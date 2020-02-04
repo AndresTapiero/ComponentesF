@@ -14,26 +14,18 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _lista() {
-
     return FutureBuilder(
       future: menuProvider.cargarData(),
       initialData: [],
       builder: ( context, AsyncSnapshot<List<dynamic>> snapshot){
-
         return ListView(
           children: _lisItems(snapshot.data, context),
         );
       },
     );
-
-/*    print (menuProvider.opciones);
-    return ListView(
-      children: _lisItems(),
-    );*/
   }
 
   List<Widget> _lisItems(List<dynamic> data, BuildContext context) {
-
     final List<Widget> opciones = [];
     if(data == null){return [];}//opcional el inicial data soluciona esta
     data.forEach((opt){
@@ -43,11 +35,6 @@ class HomePage extends StatelessWidget {
         trailing: Icon(Icons.keyboard_arrow_down),
         onTap: (){
           Navigator.pushNamed(context, opt['ruta']);
-
-/*          final route = MaterialPageRoute(
-              builder: (context) => AlertPage()
-          );
-          Navigator.push(context, route);*/
         },
 
       );
