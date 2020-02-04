@@ -23,7 +23,6 @@ class HomePage extends StatelessWidget {
         return ListView(
           children: _lisItems(snapshot.data, context),
         );
-
       },
     );
 
@@ -36,7 +35,7 @@ class HomePage extends StatelessWidget {
   List<Widget> _lisItems(List<dynamic> data, BuildContext context) {
 
     final List<Widget> opciones = [];
-
+    if(data == null){return [];}//opcional el inicial data soluciona esta
     data.forEach((opt){
       final widgetTemp = ListTile(
         title: Text(opt['texto']),
